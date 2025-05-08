@@ -46,6 +46,12 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+4️⃣ **Set up your OpenAI API key**
+Copy your OpenAI API key in the `.env` file. 
+```env
+OPENAI_API_KEY="<PLEASE INSERT YOUR OPENAI API KEY>"
+```
+
 ### Running the project
 Run the main script
 ```bash
@@ -64,7 +70,7 @@ Please allow ~30min for AI agents tackling the design probelm for you.
 ### Checking the result
 You can find the system output in this path:
 ```bash
-data/<timetag>
+data/<TIMETAG>
 ```
 
 ## 🪪 License
