@@ -62,7 +62,10 @@ Please input a design task: Design a virtual museum tour experience for remote v
 Please allow ~30min for AI agents tackling the design probelm for you. 
 
 ### Checking the result
-You can find the system output in the "data/<timetag>" path.
+You can find the system output in this path:
+```bash
+data/\<timetag\>
+```
 
 ## 🪪 License
 This code is released under the **GNU Affero General Public License (AGPL v3)** for academic and non-commercial use. For commercial licensing, please contact:
