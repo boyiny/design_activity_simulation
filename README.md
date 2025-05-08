@@ -3,8 +3,11 @@
 Welcome to our research code repository, accompanying our paper:
 
 Design Activity Simulation: Opportunities and Challenges in Using Multiple Communicative AI Agents to Tackle Design Problems
+
 Authors: [List of authors]
+
 Published at: [Conference/Journal Name, Year]
+
 [Link to paper / DOI]
 
 ## 📦 Design Activity Simulation
