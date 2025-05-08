@@ -64,7 +64,7 @@ Please allow ~30min for AI agents tackling the design probelm for you.
 ### Checking the result
 You can find the system output in this path:
 ```bash
-data/\<timetag\>
+data/<timetag>
 ```
 
 ## 🪪 License
