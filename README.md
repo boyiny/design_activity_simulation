@@ -82,7 +82,7 @@ by266@cam.ac.uk
 ## 💬 Citation
 If you use this code in your research, please cite our paper:
 ```bash
-@inproceedings{iflame2025,
+@inproceedings{design2025,
   title={...},
   author={...},
   booktitle={...},
