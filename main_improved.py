@@ -34,11 +34,9 @@ class GroupIntelligence:
     def __init__(self, end_user_number) -> None:
         dotenv_path = join(dirname(__file__), '.env')
         load_dotenv(dotenv_path)
-        OPENAI_API_KEY_1 = os.environ.get("OPENAI_API_KEY_1") 
-        # OPENAI_API_KEY_2 = os.environ.get("OPENAI_API_KEY_2") 
-        # self.model = "gpt-3.5-turbo"
+        OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY") 
         self.model = "gpt-4o"
-        self.client = OpenAI(api_key=OPENAI_API_KEY_1)
+        self.client = OpenAI(api_key=OPENAI_API_KEY)
         # self.client2 = OpenAI(api_key=OPENAI_API_KEY_2)
         self.thread_clarify_end_user = None
         self.thread_understand_user_needs = None
@@ -58,9 +56,7 @@ class GroupIntelligence:
         # create files for each thread
         current_time = f"{datetime.now().strftime('%Y%m%d%H%M%S')}"
 
-        # folder_name = f"data/{current_time}"
-        # folder_name = f"/Users/yangboyin/Code/Cambridge/design_activity_viz/static/backend_dataset/{current_time}" #/Users/yangboyin/Code/Work/ai-agent-inno-viz/static/backend_dataset
-        folder_name = f"/Users/yangboyin/Code/Work/ai-agent-inno-viz/static/backend_dataset/{current_time}" 
+        folder_name = f"data/{current_time}"
         os.makedirs(folder_name, exist_ok=True)
 
         # User persona
