@@ -3,25 +3,6 @@ import os
 from os.path import join, dirname
 from dotenv import load_dotenv
 
-# from typing import List
-# from langchain.chat_models import ChatOpenAI
-# from langchain.prompts.chat import (
-#     SystemMessagePromptTemplate,
-#     HumanMessagePromptTemplate,
-# )
-# from langchain.schema import (
-#     AIMessage,
-#     HumanMessage,
-#     SystemMessage,
-#     BaseMessage,
-# )
-
-
-# model = "gpt-4o"
-# dotenv_path = join(dirname(__file__), '.env')
-# load_dotenv(dotenv_path)
-# OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY") 
-# client = OpenAI(api_key=OPENAI_API_KEY)
 
 general_instructions_for_answering_questions = """
     You must ONLY answer my questions based on your expertise to complete the task honestly and detailedly. \
@@ -76,14 +57,6 @@ hcd_techniques_for_product_manager = """
     5. You must finish the conversation by encouraging me to answer your questions. 
 """
 
-# prd_instructions = """
-#     1. The PRD should indicate the market size, market value, user value, business value, unique selling points, ethical consideration, and technical implimentation of the product features in detail based on all <INFORMATION> provided. \
-#     2. The PRD should clearly indicate the system boundries and list all product features in detail and link them with user/business/ethical requirements. \
-#     3. The PRD should specifiy executable technical implimentation guidelines to the product features in detail so that even for junior developers can carry out the task. \
-#     4. The PRD should be detailed and executable so that the team can understand the product features and their implications so that even for a junior team can carry out the whole task. \
-#     5. The PRD should also include the timeline, budget, success metrics, and other relevant information for each each role in the team: product manager, user researcher, interaction designer, business analyst, ethics advisor, and developer, as well as the whole team. \
-#     6. The PRD should be written in a professional and clear language.
-# """
 
 prd_instructions = """
 The Product Requirements Document (PRD) should based on all <INFORMATION> provided above and include the following sections in detail:
@@ -436,29 +409,10 @@ class DesignTeamAgents:
             {prd_instructions}
             """
         }
-        # The PRD should point out the market value, user value, business value, ethical consideration, and technical implimentation of the product features. \
-        # The roles in the team are user researcher, interaction designer, business analyst, ethics advisor, and developer.
-        # The PRD should list all product features in detail and link them with user/business/ethical requirements. \
 
         return product_manager
     
-    #  This PRD should include the following sections:
-    #         1. Product Overview
-    #         2. Product Objectives
-    #         3. Market Analysis
-    #         3. Target Audience
-    #         4. User Stories
-    #         5. Functional Requirements
-    #         6. Non-Functional Requirements
-    #         7. Wireframes
-    #         8. User Flows
-    #         9. Acceptance Criteria
-    #         10. Risks and Assumptions
-    #         11. Dependencies
-    #         12. Timeline
-    #         13. Budget
-    #         14. Success Metrics
-    #         15. Conclusion
+
     
     def declare_interaction_designer(self, design_task, user_study_summary=None, business_analysis_summary=None, technical_analysis_summary=None, ethical_analysis_summary=None, design_analysis_summary=None):
         text_user_study_summary = ""

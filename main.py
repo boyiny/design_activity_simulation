@@ -114,33 +114,10 @@ class GroupIntelligence:
             pass
 
         
-        # Individual Intelligence: Create agents and define their properties
-        # 
-        # Group Intelligence: Define the code of conduct for the agents in the group
-        # 
-        # Collective Intelligence: Observe how user agents interact with the conceptual design
-
-
-        # Group Intelligence: Define the code of conduct for the agents in the group
-        # Step 1: Human input a rough design task
-        # Step 2: User researcher receives the task and indicates the target users. 
-        # Step 3: User researcher probe the stakeholders and gather user needs, using user research techniques. Make a summary of the user needs and context information. 
-        # Step 4: Product manager access the summary of the user researcher. Product manager understands the user needs and context information. 
-        # Step 5.1: Having this information, the product manager asks the business analyst to provide a business analysis of the design task. Product manager understands the business goals and constraints.
-        # Step 5.2: Having this information, the product manager asks the ethics advisor to provide an ethical analysis of the design task. Product manager understands the ethical implications and constraints.
-        # Step 5.3: Having this information, the product manager asks the developer to provide a technical analysis of the design task. Product manager understands the technical feasibility and constraints.
-        # Step 6: Product manager summarizes the user needs, technical feasibility, business goals, and ethical implications. Product manager provides a conceptual design of the product, describing the features of the product.
-        # Step 7: Interaction designer receives the conceptual design and creates a detailed design of the product, describing the user interface and user experience.
-
-
     # === Step 1: Human input a rough design task ===
     def createDesignTask(self):
         # Human input a rough design task
-
-        # design_task = "Design an app that helps overweight people form a healthy lifestyle."
         design_task = input("Please input a design task: ") # Design a human-in-the-loop system driven by multiple AI agents for product innovation. 
-        # design_task = "Desin a virtual career coach system that plays MBA career office role to help MBA students navigate career deevlopment with structure and efficiency."
-        # design_task = "Design an app that helps students take online couses."
         return design_task
     
     # === Step 2: User researcher receives the task and indicates the target users. ===
@@ -196,7 +173,6 @@ class GroupIntelligence:
 
         n = 0
         # User Researcher ask the first question to the stakeholder
-        # self.log_summary(f"=======USER {user_index+1}=======\n", self.file_name_history_gather_user_needs_list[user_index]) # Add user index to the conversation
         user_researcher_msg = "Could you tell me a little about yourself?" 
         self.log_conversation("User Researcher", user_researcher_msg, self.file_name_history_gather_user_needs_list[user_index])
         print(f"\n\nUser researcher: \n{user_researcher_msg}\n")
@@ -308,7 +284,6 @@ class GroupIntelligence:
         run = self.client.beta.threads.runs.create_and_poll(
             thread_id=thread.id,
             assistant_id=self.product_manager_agent.id,
-            # instructions="Please only provide a detailed summary of the user study. Do not add anything else."
         )
 
         if run.status == "completed":
@@ -433,8 +408,6 @@ class GroupIntelligence:
         # Create user researcher agent
         self.user_researcher_agent = self.design_team_agents.createUserResearcherAgent(design_task)
         end_user_persona_list = self.clarifyStakeholderIdentity(end_user_number, design_task)
-
-        # self.file_name_history_gather_user_needs_list = ["data/20240822113951/history_gather_user_needs_1.txt", "data/20240822113951/history_gather_user_needs_2.txt", "data/20240822113951/history_gather_user_needs_3.txt", "data/20240822113951/history_gather_user_needs_4.txt", "data/20240822113951/history_gather_user_needs_5.txt", "data/20240822113951/history_gather_user_needs_6.txt", "data/20240822113951/history_gather_user_needs_7.txt", "data/20240822113951/history_gather_user_needs_8.txt"]
         
         for i, end_user_persona in enumerate(end_user_persona_list):
             # Clarify the stakeholder identity
@@ -454,15 +427,7 @@ class GroupIntelligence:
             # Step 4: Product manager access the summary of the user researcher. Product manager understands the user needs and context information.
             self.product_manager_agent = self.design_team_agents.createProductManagerAgent(design_task)
             summary_prompt = self.design_team_agents.getSummaryPrompt(design_task, DESIGN_EVENT)
-            user_study_summary = self.getSummaryFromProductManager(summary_prompt, self.file_name_history_gather_user_needs_list[i], self.file_name_summary_gather_user_needs_list[i]) # 
-            # user_study_summary = self.getSummaryFromProductManager(design_task, "data/20240822113951/history_gather_user_needs.txt", self.file_name_summary_gather_user_needs_list[i]) # 
-        
-        # # Test the user study summary
-        # self.product_manager_agent = self.design_team_agents.createProductManagerAgent(design_task)
-        # self.file_name_summary_gather_user_needs_list = []
-        # folder_name = "data/design_activity_eight_users"
-        # for i in range(self.end_user_number):
-        #     self.file_name_summary_gather_user_needs_list.append(f"{folder_name}/summary_gather_user_needs_{i+1}.txt")
+            user_study_summary = self.getSummaryFromProductManager(summary_prompt, self.file_name_history_gather_user_needs_list[i], self.file_name_summary_gather_user_needs_list[i]) #         
 
 
         # # Step 5.1: Having this information, the product manager asks the business analyst to provide a business analysis of the design task. Product manager understands the business goals and constraints.
