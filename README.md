@@ -4,11 +4,11 @@ Welcome to our research code repository, accompanying our paper:
 
 Design Activity Simulation: Opportunities and Challenges in Using Multiple Communicative AI Agents to Tackle Design Problems
 
-Authors: [List of authors]
+Authors: Boyin Yang, John Dudley, Per Ola Kristensson
 
-Published at: [Conference/Journal Name, Year]
+Published at: Proceedings of the 7th ACM Conference on Conversational User Interfaces (CUI '25), July 8--10, 2025, Waterloo, ON, Canada
 
-[Link to paper / DOI]
+Link: [Coming soon](https://dl.acm.org/doi/10.1145/3719160.3736609)
 
 ## 📦 Design Activity Simulation
 
@@ -82,11 +82,20 @@ by266@cam.ac.uk
 ## 💬 Citation
 If you use this code in your research, please cite our paper:
 ```bash
-@inproceedings{design2025,
-  title={...},
-  author={...},
-  booktitle={...},
-  year={2025}
+@inproceedings{10.1145/3719160.3736609,
+  author = {Yang, Boyin and Dudley, John and Kristensson, Per Ola},
+  title = {Design Activity Simulation: Opportunities and Challenges in Using Multiple Communicative AI Agents to Tackle Design Problems},
+  year = {2025},
+  isbn = {979-8-4007-1527-3/2025/07},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3719160.3736609},
+  doi = {10.1145/3719160.3736609},
+  booktitle = {Proceedings of the 7th ACM Conference on Conversational User Interfaces},
+  articleno = {},
+  numpages = {},
+  location = {Waterloo, ON, Canada},
+  series = {CUI '25}
 }
 ```
 
