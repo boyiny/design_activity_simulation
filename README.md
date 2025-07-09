@@ -8,7 +8,7 @@ Authors: Boyin Yang, John Dudley, Per Ola Kristensson
 
 Published at: Proceedings of the 7th ACM Conference on Conversational User Interfaces (CUI '25), July 8--10, 2025, Waterloo, ON, Canada
 
-Link: [Coming soon](https://dl.acm.org/doi/10.1145/3719160.3736609)
+Link: [click here](https://dl.acm.org/doi/10.1145/3719160.3736609)
 
 ## 📦 Design Activity Simulation
 
